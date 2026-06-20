@@ -30,7 +30,7 @@
       --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    * {
+    html{
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -741,7 +741,7 @@
       overflow: hidden;
       background: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(212,175,55,0.03));
       border: 1px solid rgba(212, 175, 55, 0.2);
-      backdrop-filter: blur(20px);
+      backdrop-filter: blur(10px);
       box-shadow: 0 0 50px rgba(212,175,55,0.08), 0 30px 80px rgba(0,0,0,0.6);
     }
     .cta-box::before {
@@ -1321,6 +1321,21 @@ button,
   -webkit-tap-highlight-color: transparent;
 }
 
+    @media (hover:none){
+
+  .glass-panel:hover,
+  .committee-card:hover,
+  .gallery-item:hover img,
+  .btn:hover,
+  .president-box:hover .chairperson-img,
+  .president-box:hover .sg-img{
+      transform:none;
+      box-shadow:none;
+      filter:none;
+  }
+
+}
+
 
   </style>
 </head>
@@ -1361,7 +1376,7 @@ button,
       <p class="reveal">The Begining Of A New Legacy</p>
       <div class="reveal">
         <a href="#register" class="btn btn-primary"><i class="fas fa-crown"></i>&nbsp; Register Now</a>
-        <a href="index.html" class="btn btn-secondary">Our Lagacy</a>
+        <a href="index.html" class="btn btn-secondary">Our Legacy</a>
       </div>
     </div>
   </header>
@@ -1487,7 +1502,7 @@ button,
       <div class="reg-card glass reveal">
         <i class="fas fa-headset"></i>
         <h3>ACD and CD Application Form</h3>
-        <p style="color: var(--silver); font-size: 0.9rem; margin-top: 10px;">Join Our Dias</p>
+        <p style="color: var(--silver); font-size: 0.9rem; margin-top: 10px;">Join Our Dais</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8g6Ll2da9PPg-RYXI0Sc4H1JzANGWdIM2EKI6NGeBrlPwwA/viewform?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGnSxWu-zmobDtfIv9xYxL3eQOimkYk3y6ty-OKoI7qo7LQ8qYW9m7p1rAtsLw_aem_qMgAgGoHQzkvO0qih4qlLQ" class="reg-btn">Apply Now</a>
       </div>
     </div>
@@ -1673,7 +1688,10 @@ button,
 
     function initParticles() {
       particlesArray = [];
-      const numberOfParticles = window.innerWidth < 768 ? 25 : Math.floor((canvas.width * canvas.height) / 10000);
+      const numberOfParticles =
+window.innerWidth < 768
+? 15
+: 60;
       for (let i = 0; i < numberOfParticles; i++) {
         particlesArray.push(new Particle());
       }
