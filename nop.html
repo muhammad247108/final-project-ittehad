@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build Forge - Enterprise Software Foundry</title>
+<style>
+  /* Base & Theme */
+  :root {
+    --bg-color: #050505;
+    --text-main: #f4f4f5;
+    --text-muted: #888888;
+    --accent: #ff4500; /* Forged heat accent */
+    --border: #222222;
+    --card-bg: #0a0a0a;
+  }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Header / Navigation */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: rgba(5, 5, 5, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+  }
+
+  .logo {
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .logo em {
+    font-style: normal;
+    color: var(--text-muted);
+  }
+
+  .status {
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .status::before {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--accent);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+  }
+
+  /* Global Layout */
+  section {
+    padding: 120px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  h2 {
+    font-size: 3rem;
+    margin-top: 0;
+    line-height: 1.1;
+    letter-spacing: -1px;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+
+  .hero h1 {
+    font-size: clamp(4rem, 8vw, 8rem);
+    margin: 10px 0;
+    letter-spacing: -3px;
+    line-height: 0.9;
+  }
+
+  .hero h1 span {
+    color: var(--accent);
+  }
+
+  .hero p.subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin-bottom: 40px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 18px 32px;
+    background: var(--text-main);
+    color: var(--bg-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    background: var(--text-muted);
+  }
+
+  .btn span {
+    margin-left: 10px;
+    transition: transform 0.3s;
+  }
+
+  .btn:hover span {
+    transform: translateX(5px);
+  }
+
+  /* Grid Layouts for Services & Stats */
+  .grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 60px;
+  }
+
+  .card {
+    border: 1px solid var(--border);
+    padding: 40px;
+    background: var(--card-bg);
+    transition: border-color 0.3s ease;
+  }
+
+  .card:hover {
+    border-color: var(--text-muted);
+  }
+
+  .card-label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .card h3 {
+    font-size: 1.5rem;
+    margin: 0 0 15px 0;
+  }
+
+  .card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  /* Stats Section */
+  .stats .card {
+    text-align: center;
+    padding: 60px 40px;
+  }
+
+  .stats .card h3 {
+    font-size: 4rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+    letter-spacing: -2px;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">BUILD<em>FORGE</em></div>
+  <div class="status">Forge Status: Hot</div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <span class="section-label">Est. 2018 — Enterprise Software Foundry</span>
+  <h1>WE BUILD —<br><span>FORGE</span></h1>
+  <p class="subtitle">Custom CRM, sales systems and AI automation that scale enterprises — engineered under pressure and shipped in weeks, not quarters.</p>
+  <a href="#" class="btn">Book a Discovery Call <span>→</span></a>
+</section>
+
+<!-- Services / Toolbench Section -->
+<section class="services">
+  <span class="section-label">02 — The Toolbench</span>
+  <h2>Seven tools,<br><em>forged in-house.</em></h2>
+  
+  <div class="grid-3">
+    <!-- Tool 1 -->
+    <div class="card">
+      <span class="card-label">Tool / 01 — Relationship Engine</span>
+      <h3>CRM Solutions</h3>
+      <p>Customer intelligence, centralized and sharpened. Every account, every touchpoint, one source of truth.</p>
+    </div>
+    
+    <!-- Tool 2 -->
+    <div class="card">
+      <span class="card-label">Tool / 02 — Always-On</span>
+      <h3>AI Automation</h3>
+      <p>Chatbots, auto-replies and lead capture that answer in seconds, around the clock on WhatsApp, FB, & IG.</p>
+    </div>
+
+    <!-- Tool 3 -->
+    <div class="card">
+      <span class="card-label">Tool / 03 — Carrier Scale</span>
+      <h3>Enterprise WhatsApp Support</h3>
+      <p>Thousands of conversations, one calm queue. Routing, SLAs, agents + AI side by side.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Proof / Stats Section -->
+<section class="stats">
+  <span class="section-label">05 — Proof, In Metal</span>
+  <div class="grid-3">
+    <div class="card">
+      <h3>37</h3>
+      <p>Systems Forged</p>
+    </div>
+    <div class="card">
+      <h3>$40M+</h3>
+      <p>Revenue Influenced</p>
+    </div>
+    <div class="card">
+      <h3>24/7</h3>
+      <p>Automation Watch</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
